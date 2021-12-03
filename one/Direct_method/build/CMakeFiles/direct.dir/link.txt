@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdirect.a CMakeFiles/direct.dir/src/direct.cpp.o
+/usr/bin/ranlib libdirect.a

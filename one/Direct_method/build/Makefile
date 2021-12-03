@@ -129,29 +129,103 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+#=============================================================================
+# Target rules for targets named direct
+
+# Build rule for target.
+direct: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 direct
+.PHONY : direct
+
+# fast build rule for target.
+direct/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/direct.dir/build.make CMakeFiles/direct.dir/build
+.PHONY : direct/fast
+
+#=============================================================================
+# Target rules for targets named pic_process
+
+# Build rule for target.
+pic_process: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pic_process
+.PHONY : pic_process
+
+# fast build rule for target.
+pic_process/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pic_process.dir/build.make CMakeFiles/pic_process.dir/build
+.PHONY : pic_process/fast
+
+src/direct.o: src/direct.cpp.o
+.PHONY : src/direct.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/direct.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/direct.dir/build.make CMakeFiles/direct.dir/src/direct.cpp.o
+.PHONY : src/direct.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+src/direct.i: src/direct.cpp.i
+.PHONY : src/direct.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/direct.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/direct.dir/build.make CMakeFiles/direct.dir/src/direct.cpp.i
+.PHONY : src/direct.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+src/direct.s: src/direct.cpp.s
+.PHONY : src/direct.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/direct.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/direct.dir/build.make CMakeFiles/direct.dir/src/direct.cpp.s
+.PHONY : src/direct.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/pic_process.o: src/pic_process.cpp.o
+.PHONY : src/pic_process.o
+
+# target to build an object file
+src/pic_process.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pic_process.dir/build.make CMakeFiles/pic_process.dir/src/pic_process.cpp.o
+.PHONY : src/pic_process.cpp.o
+
+src/pic_process.i: src/pic_process.cpp.i
+.PHONY : src/pic_process.i
+
+# target to preprocess a source file
+src/pic_process.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pic_process.dir/build.make CMakeFiles/pic_process.dir/src/pic_process.cpp.i
+.PHONY : src/pic_process.cpp.i
+
+src/pic_process.s: src/pic_process.cpp.s
+.PHONY : src/pic_process.s
+
+# target to generate assembly for a file
+src/pic_process.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pic_process.dir/build.make CMakeFiles/pic_process.dir/src/pic_process.cpp.s
+.PHONY : src/pic_process.cpp.s
 
 # Help Target
 help:
@@ -161,10 +235,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... direct"
 	@echo "... main"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... pic_process"
+	@echo "... src/direct.o"
+	@echo "... src/direct.i"
+	@echo "... src/direct.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/pic_process.o"
+	@echo "... src/pic_process.i"
+	@echo "... src/pic_process.s"
 .PHONY : help
 
 

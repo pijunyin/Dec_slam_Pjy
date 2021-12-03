@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpic_process.a CMakeFiles/pic_process.dir/src/pic_process.cpp.o
+/usr/bin/ranlib libpic_process.a
