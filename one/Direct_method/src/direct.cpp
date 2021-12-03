@@ -37,7 +37,6 @@ public:
         else
         {
             _error ( 0,0 ) = getPixelValue ( x,y ) - _measurement;//将得到的目标坐标灰度值与原坐标相减
-           //cout<<"error: "<<_error ( 0,0 ) <<" num: "<<i<<endl;
         }
     }
 
@@ -121,7 +120,7 @@ void pose_estimate_direct(const vector< Measurement >& measurements, cv::Mat* gr
     g2o::OptimizationAlgorithmLevenberg* solver=new g2o::OptimizationAlgorithmLevenberg(solver_ptr);
     g2o::SparseOptimizer optimizer;
     optimizer.setAlgorithm ( solver );
-    optimizer.setVerbose( true);
+    optimizer.setVerbose( false);
     //5:add vertex and edge
     g2o::VertexSE3Expmap* pose=new g2o::VertexSE3Expmap();//initialize a pose to add into vertex
 
@@ -143,10 +142,9 @@ void pose_estimate_direct(const vector< Measurement >& measurements, cv::Mat* gr
         edge->setId ( id++ );
         optimizer.addEdge ( edge ); 
     }
-    cout<<"edges in graph: "<<optimizer.edges().size() <<endl;
+   // cout<<"edges in graph: "<<optimizer.edges().size() <<endl;
     optimizer.initializeOptimization();
-    optimizer.optimize ( 30 );
-    cout<<"ok"<<endl; 
+    optimizer.optimize ( 500 );
     Tcw = pose->estimate();
 }
 
